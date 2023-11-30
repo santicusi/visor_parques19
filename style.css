@@ -1,0 +1,88 @@
+/* Estilos Generales */
+
+
+
+
+* {
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Header y Footer */
+header, footer {
+    text-align: center;
+    padding: 1em;
+    background-color: #333; /* Color de fondo para header y footer */
+    color: white;
+}
+
+/* Contenido principal y estilos de mapa */
+.content {
+    display: flex;
+    flex-direction: column; /* Elementos apilados verticalmente en dispositivos móviles */
+}
+
+#map {
+    order: 2; /* El mapa aparece en segundo lugar en móviles */
+    height: 400px; /* Altura del mapa en dispositivos móviles */
+}
+
+/* Estilos para el panel de filtros y de información */
+.filter-box, .info-box {
+    padding: 20px;
+    background-color: #f8f9fa;
+    order: 1; /* El filtro aparece primero en dispositivos móviles */
+}
+
+.info-box {
+    display: none; /* Ocultar por defecto y mostrarlo mediante JavaScript cuando sea necesario */
+}
+
+/* Estilos responsivos para pantallas medianas y grandes */
+@media (min-width: 768px) {
+    .info-box {
+        width: 30%; /* Ancho específico para pantallas más grandes */
+    }
+
+    .content {
+        flex-direction: row; /* Elementos alineados horizontalmente en pantallas más grandes */
+    }
+
+    #map {
+        flex-grow: 1; /* El mapa ocupa el espacio restante disponible */
+        height: 600px; /* Altura del mapa en pantallas más grandes */
+        order: 2; /* El mapa en el medio */
+    }
+
+    .filter-box {
+        width: 20%; /* Ancho del panel de filtros */
+        order: 1; /* Filtro a la izquierda */
+    }
+
+    .info-box {
+        width: 30%; /* Ancho del panel de información */
+        order: 3; /* Información a la derecha */
+    }
+}
+
+/* Estilos para dispositivos móviles y pantallas pequeñas */
+@media (max-width: 768px) {
+    .filter-box, .info-box, #map {
+        width: 100%; /* Ocupan todo el ancho en pantallas pequeñas */
+    }
+
+    .info-box {
+        display: block; /* Muestra la caja de información en dispositivos móviles */
+    }
+
+    #map {
+        height: 400px; /* Ajusta la altura para pantallas más pequeñas */
+        order: 2; /* Asegura que el mapa esté en el orden correcto */
+    }
+}
