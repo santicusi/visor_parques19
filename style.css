@@ -1,8 +1,5 @@
 /* Estilos Generales */
 
-
-
-
 * {
     box-sizing: border-box;
 }
@@ -18,7 +15,7 @@ body, html {
 header, footer {
     text-align: center;
     padding: 1em;
-    background-color: #333; /* Color de fondo para header y footer */
+    background-color: rgb(188, 18, 18); /* Color de fondo para header y footer */
     color: white;
 }
 
