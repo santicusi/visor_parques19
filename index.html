@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <title>Mapa con Leaflet</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"/>
+</head>
+<body>  
+    <header>
+        <h1>GeoVisor de parques de la comuna 19 en Santiago de Cali</h1>
+    </header>
+    
+    <main class="container-fluid">
+        <div class="row">
+        <aside class="filter-box col-md-3 bg-light p-4">
+            <h3>Filtrar Parques</h3>
+            <select id="filtroParques" class="form-control my-2">
+                <option value="Todos">Todos</option>
+                <option value="Parque Recreativo">Parque Recreativo</option>
+                <option value="Parque Cultural">Parque Cultural</option>
+                <option value="Parque Natutal o Ecológico">Parque Natural o Ecológico</option>
+            </select>
+            <button id="botonFiltrar" class="btn btn-primary w-100">Filtrar</button>
+        </aside>
+           
+        <div id="map" class="col-md-6" style="height: 600px;"></div>
+    
+        <aside class="info-box col-md-3 bg-light p-4" style="display: none;">
+            <form id="myForm" action="codigo.php" method="POST">
+                <select name="parques" id="parques" class="form-control">
+                    <option value="Parque Recreativo">Parque Recreativo</option>
+                    <option value="Parque Cultural">Parque Cultural</option>
+                    <option value="Parque Natutal o Ecológico">Parque Natutal o Ecológico</option>
+                </select>
+                <input type="text" class="form-control" name="descripcion" id="descripcion" placeholder="Descripción">
+                <input type="hidden" name="latitud" id="latitud">
+                <input type="hidden" name="longitud" id="longitud">
+                <input type="hidden" name="id" id="id">
+                <button type="submit" class="btn btn-success">Guardar Marcador</button>
+            </form>
+        </aside>
+        </div>
+    </main>
+
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet.heat@0.2.0/dist/leaflet-heat.js"></script>
+    <script src="https://unpkg.com/leaflet.locatecontrol/dist/L.Control.Locate.min.js"></script>
+    <script src="JavaScript.js"></script> <!-- Asegúrate de que la ruta sea correcta -->
+    
+    <footer>
+        <h3>&copy; 2023 GeoVisor Cali</h3>
+    </footer>
+</body>
+</html>
+
+
+
+
